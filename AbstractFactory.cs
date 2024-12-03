@@ -47,4 +47,20 @@
     {
         public void Render() => Console.WriteLine("[UI Motorista] Layout exibido.");
     }
+
+    public class AdminUIFactory : IUIFactory
+    {
+        public IButton CreateButton() => new AdminButton();
+        public ILayout CreateLayout() => new AdminLayout();
+    }
+
+    public class AdminButton : IButton
+    {
+        public void Render() => Console.WriteLine("[UI Admin] Botão exibido.");
+    }
+
+    public class AdminLayout : ILayout
+    {
+        public void Render() => Console.WriteLine("[UI Admin] Layout exibido.");
+    }
 }
